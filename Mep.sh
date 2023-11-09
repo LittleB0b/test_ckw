@@ -93,7 +93,7 @@ process_repo() {
 
         # TODO IF CIRKWI/MODULEBOX
         if [ "$repo_name" = "modulesbox" ] || [ "$repo_name" = "cirkwi" ]
-	        sh ./UpdateConstantes.sh $last_tag  $PROD
+	        sh ./UpdateConstantes.sh $last_tag  $PROD $repo_name
         fi
 
         # Création et push du nouveau tag
