@@ -1,0 +1,105 @@
+
+# Fichiers env
+/app/config/env.php
+/app/config/env.backup.php
+/app/config/env.preprod.php
+/app/config/env.prod.php
+/app/config/microsoft_creds.json
+
+# Scripts serveur
+/web/oco.php
+/web/serveur.php
+
+# Répertoire fichier
+/web/fichier
+
+# Namespace 1MDATA
+/src/V3Tmp/
+
+# Google Search Console
+/web/google5edccd488146c932.html
+/web/google7da618ce93e6ec8a.html
+
+# Sitemaps
+/web/sitemap/*
+!/web/sitemap/pages.xml
+!/web/sitemap/xml-index.xsl
+!/web/sitemap/xml-sitemap.xsl
+
+# Cache and logs
+/app/logs
+/var/
+
+# Managed by Compass
+.sass-cache/
+
+# Managed by Node.js
+/node_modules/
+/package-lock.json
+
+# Managed by Yarn
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
+
+# Managed by Composer
+/vendor/
+
+# Composer PHAR
+/composer.phar
+
+# Patches
+*.patch
+
+# macOS files
+.DS_Store
+
+### Eclipse ###
+*.pydevproject
+.metadata
+.gradle
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+
+# Eclipse Core
+.project
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+
+# PDT-specific
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# TeXlipse plugin
+.texlipse
+
+# eqFTP plugin
+*.eqFTPtmp
+
+# VSCode
+.vscode
+
+# PHPStorm
+.idea
+
+# Sublime Text
+sftp-config*.json
