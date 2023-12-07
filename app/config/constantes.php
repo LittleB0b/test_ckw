@@ -63,7 +63,7 @@ $constantes = new Constantes(
         'DELAI_NOTIFICATIONS' => 60000, // en millisecondes
         'TIMEOUT_NOTIFICATIONS' => 5000, // temps maximum pour la requête en millisecondes
         'DEFAULT_ERREUR_DEV' => 'Ton application chie dans la colle',
-        'VERSION_CSS' =>  constant("ENV") == "prod" ? 586 : time(),
+        'VERSION_CSS' =>  constant("ENV") == "prod" ? 587 : time(),
         'VERSION_JS' =>  constant("ENV") == "prod" ? 579 : time(), // Permet de recharger le fichier javascript sans vider le cache
         'VERSION_JS_BACK' => constant("ENV") == "prod" ? 560 : time(), //Permet de forcer les js en cache du client
         'VERSION_JS_FRONT' => constant("ENV") == "prod" ? 560 : time(), //Permet de forcer les js en cache du client
