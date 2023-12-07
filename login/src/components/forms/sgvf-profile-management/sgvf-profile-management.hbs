@@ -1,0 +1,46 @@
+<h1 class="ckw-cird__title">{{trans "profileManagement"}}</h1>
+
+<div class="ckw-cird__form">
+
+    <!-- Photo de profil -->
+
+    <div class="ckw-cird__img ckw-cird__section">
+
+        <h2>{{trans "profile.profilPicture"}}</h2>
+
+        <div class="ckw-cird__change-img">
+            <div class="ckw-cird__img">
+                <div class="ckw-cird__error" data-target="file"></div>
+
+                <img src="" alt="" id="ckw-cird__sgvf-profile-management__image" />
+
+                <span class="ckw-cird__sgvf-profile-management__image-loading">
+                    {{{svg "loading" }}}
+                </span>
+            </div>
+            <div class="ckw-cird__submit-img">
+                <input type="file" id="ckw-cird__sgvf-profile-management__file" accept="image/*" name="file" />
+                <label for="ckw-cird__sgvf-profile-management__file" id="ckw-cird__sgvf-profile-management__label-img">{{trans
+                        "change"}}</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button Enregistrer -->
+
+    <button class="ckw-cird__submit-button">{{trans "save"}}</button>
+
+    <div class="ckw-cird__user-info" style="height: auto;">
+        <a class="ckw-cird__edit-profil-sgvf" href="{{ sgvfProfileUrl }}" target="_blank">
+            {{{ trans "sgvf-update-profile" }}}
+            <span class="ckw-cird__line">
+                {{{svg "ffr" }}} FFRandonnée
+            </span>
+        </a>
+    </div>
+
+    <!-- Suppression compte -->
+    <div class="ckw-cird__mail ckw-cird__section">
+        <a class="ckw-cird__send-account-removal-request"></a>
+    </div>
+</div>

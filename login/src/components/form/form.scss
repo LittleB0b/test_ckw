@@ -1,0 +1,512 @@
+
+%field {
+    border-radius: .25em;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0.75em;
+    width: 100%;
+}
+
+$field-margin: 16px;
+
+%button {
+    @extend %field;
+
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-top: $field-margin;
+    text-align: center;
+    text-decoration: none;
+}
+
+.ckw-cird {
+    &__title {
+        font-family: sans-serif;
+        font-size: 1.8rem;
+        margin: 0 0 1.8rem;
+        text-align: center;
+    }
+
+    &__form {
+        font-family: sans-serif;
+        margin-bottom: 1.8rem;
+
+        label {
+            display: block;
+            text-align: left;
+            color: #9D9D9D;
+        }
+
+        a {
+            color: #1e9dcf;
+        }
+
+        &--cirkwi-last{
+            .ckw-cird__links{
+                &--reset-password{
+                    margin-bottom: -16px !important;
+                }
+            }
+        }
+    }
+
+    &__error {
+        font-size: 12px;
+        color: #e47979;
+        flex-basis: 100%;
+    }
+
+    &__alert-success{
+        font-size: 12px;
+        color: #31df0e;
+    }
+
+    &__hide{
+        display: none;
+    }
+
+    &__hide-password {
+        max-height: 0 !important;
+        overflow: hidden;
+        border: 0 !important;
+        transition: all 0.5s ease-out;
+    }
+
+    &__hide_btn_transition{
+        transition: visibility 0s, opacity 0s linear;
+        opacity: 0;
+    }
+
+    &__show_btn_transition{
+        transition: visibility 0.5s, opacity 0.5s linear;
+        opacity: 1;
+    }
+
+    &__input {
+        @extend %field;
+
+        display: block;
+        border: 1px solid #404040;
+        margin-bottom: $field-margin;
+        margin-top: 5px;
+        padding: 0.7em;
+
+        &:focus {
+            outline: 1px solid #333;
+        }
+    }
+
+    &__form &__button,
+    &__form &__submit-button, &__back-button {
+        @extend %button;
+
+        background-color: #333;
+
+        &:active {
+            background: #dbdbdb;
+        }
+    }
+
+    &__button_secondary{
+        @extend %button;
+
+        color: #333;
+        background: #fff;
+        border: 1px solid #333;
+
+        &:active {
+            color: #dbdbdb;
+            background: #333;
+        }
+
+        > a{
+            text-decoration: none;
+            color: #333;
+        }
+    }
+
+    &__form &__cancel-button {
+        @extend %button;
+
+        border: 1px solid #333;
+        color: #333;
+        padding: calc(0.75em - 1px);
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        margin: $field-margin 0;
+        text-align: center;
+
+        > a {
+            margin: auto;
+            padding: 10px;
+            cursor: pointer;
+
+            + a {
+                margin-top: 1em;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__tos-field, &__pro-field {
+        display: flex;
+
+        > .ckw-cird__input {
+            align-self: center;
+            margin-bottom: 5px;
+            width: 6%;
+        }
+
+        label {
+            font-size: 14px;
+            margin-left: 3px;
+            margin-top: 4px;
+        }
+    }
+
+    &__text {
+        text-align:justify;
+        font-size: 14px;
+        width:100%;
+    }
+
+    &__small-text {
+        color: #c4c4c4;
+        text-align:justify;
+        font-size: 11px;
+        width:100%;
+    }
+
+    &__login-with {
+        @extend %button;
+
+        display: flex;
+        align-items: center;
+        padding: 0.75em 1.2em;
+        line-height: 1.1;
+        align-items: center;
+
+        svg {
+            max-width: 1.2em;
+            margin-right: 10px;
+        }
+
+        &:not(#ckw-cird__login__microsoft) {
+            svg {
+                [fill]:not([fill=none]) {
+                    fill: #fff;
+                }
+            }
+        }
+
+        span {
+            flex: 1;
+        }
+
+        .ckw-cird__links + & {
+            margin-top: 0;
+        }
+    }
+
+    &__login-reason {
+        font-family: sans-serif;
+        text-align: center;
+        margin: -8px -10px 20px;
+        white-space: pre-line;
+    }
+
+    &__btn_id{
+        @extend %button;
+        color: #333;
+        background: #fff;
+        margin-top: 20px;
+        border: 1px solid #333;
+    }
+
+    &__change-password {
+        overflow: hidden;
+        border-radius: 0.25em;
+        margin-top: 15px;
+        max-height: 310px;
+        border: 1px solid #404040;
+        transition: all 0.5s ease-in;
+
+
+        > .ckw-cird__close{
+            padding-right: 6px;
+            cursor: pointer;
+            float: right;
+        }
+
+        >.ckw-cird__password-content{
+            padding: 10px;
+        }
+    }
+
+    &__change-img{
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+        .ckw-cird__profile-management__image-loading,
+        .ckw-cird__sgvf-profile-management__image-loading{
+            display: none;
+            justify-content: center;
+            align-items: center;
+
+            svg{
+                width: 50%;
+            }
+        }
+
+        img,
+        .ckw-cird__profile-management__image-loading,
+        .ckw-cird__sgvf-profile-management__image-loading {
+            width: 127px;
+            height: 127px;
+            border-radius: 50%;
+        }
+
+        #ckw-cird__profile-management__label-img,
+        #ckw-cird__sgvf-profile-management__label-img {
+            @extend %button;
+
+            color: #333;
+            background: #fff;
+            border: 1px solid #333;
+            margin-top: 0;
+
+            &:active {
+                color: #dbdbdb;
+                background: #333;
+            }
+        }
+
+        #ckw-cird__profile-management__file,
+        #ckw-cird__sgvf-profile-management__file {
+            display: none;
+        }
+    }
+
+    &__numAddr, &__nameAddr,
+    &__numAddrFac, &__nameAddrFac{
+        display: inline-block;
+        border-left: 0;
+    }
+
+    &__asterisk{
+        color: red;
+    }
+
+    &__row{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__numAddr, &__numAddrFac{
+        flex: 1;
+    }
+
+    &__numAddr {
+        margin-right: 0.5em;
+    }
+
+    &__nameAddr, &__nameAddrFac{
+        flex: 5;
+    }
+
+    &__header_row{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__mail{
+        margin-top: 15px;
+        text-align: center;
+        font-size: smaller;
+        > a {
+            color: #9D9D9D;
+            text-decoration: underline;
+        }
+    }
+
+
+    /********************** Partie tooltip **********************/
+
+    &__tooltip_icon{
+        display: flex;
+        background-color: #333; /* Noir */
+        border: none;
+        color: white;
+        padding: 3px 4px 2px 4px;
+        margin-left: 5px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 7px;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+
+    &__tooltip_text{
+        background: #333;
+        color: white;
+        opacity: 0.7;
+        padding: 5px;
+        width: 200px;
+        font-size: 12px;
+        text-align: justify;
+        text-justify: auto;
+        border-radius: 4px;
+        display: none;
+    }
+
+    &__tooltip_text[data-show]{
+        display: block;
+    }
+
+    &__tooltip_arrow, &__tooltip_arrow::before{
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: inherit;
+    }
+
+    &__tooltip_arrow{
+        visibility: hidden;
+    }
+
+    &__tooltip_arrow::before{
+        visibility: visible;
+        content: "";
+        transform: rotate(45deg);
+    }
+
+    &__tooltip_text[data-popper-placement^="top"] > &__tooltip_arrow{
+        bottom: -4px;
+    }
+
+    &__tooltip_text[data-popper-placement^="bottom"] > &__tooltip_arrow{
+        top: -4px;
+    }
+
+    &__tooltip_text[data-popper-placement^="left"] > &__tooltip_arrow{
+        right: -4px;
+    }
+
+    &__tooltip_text[data-popper-placement^="right"] > &__tooltip_arrow{
+        left: -4px;
+    }
+
+    /************************* Fin de la partie tootltip *************************/
+
+
+    &__pro, &__billing{
+        margin-bottom: 16px;
+        label{
+            cursor: pointer;
+        }
+    }
+
+    &__section{
+        margin-top: 50px;
+
+        >h2{
+            font-size: 18px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &__pro-section, &__billing-section{
+        overflow: hidden;
+        height: 280px;
+        width: 350px;
+    }
+
+    @media (min-width: 1300px){
+        &__user-info, &__user-address{
+            width: 720px;
+            margin-left: -186px;
+            height: 455px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        &__section{
+            width: 350px;
+        }
+
+        &__pro-section, &__billing-section{
+            padding-left: 30px;
+            width: 350px;
+            height: 455px;
+            opacity: 1;
+            transition: all 0.5s, opacity 0.8s ease-in-out;
+        }
+
+        &__billing-content{
+            margin-top: 50px;
+        }
+
+        &__pro-section.hide-section, &__billing-section.hide-section{
+            width: 0% !important;
+            overflow: hidden;
+            visibility: hidden;
+            padding: 0;
+            opacity: 0;
+            transition: width 0.5s, opacity 0.2s, padding 0.5s ease-in-out;
+        }
+    }
+
+    @media(max-width: 1300px){
+        &__pro-section{
+            margin-top: 10px;
+            height: 290px;
+            width: auto;
+            opacity: 1;
+            transition: all 0.5s ease-in-out;
+        }
+
+        &__billing-section{
+            margin-top: 0;
+            height: 370px;
+            width: auto;
+            opacity: 1;
+            transition: all 0.5s ease-in-out;
+        }
+
+        &__pro-section.hide-section, &__billing-section.hide-section{
+            height: 0 !important;
+            overflow: hidden;
+            //display: none;
+            visibility: hidden;
+            border: 0;
+            opacity: 0;
+            transition: height 0.5s, opacity 0.2s ease-out;
+        }
+    }
+
+    &__unicode-arrow{
+        position: relative;
+        top: -2px;
+    }
+}
+
+

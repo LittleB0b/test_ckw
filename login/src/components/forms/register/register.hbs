@@ -1,0 +1,62 @@
+{{#if showTitle }}
+    <h1 class="ckw-cird__title">{{trans "register" }}</h1>
+{{/if }}
+
+<div class="ckw-cird__form">
+    <div class="ckw-cird__register-inputs">
+        <div class="ckw-cird__register-input-base">
+            <div class="ckw-cird__error" data-target="email"></div>
+            <label for="ckw-cird__register__email">{{trans "email" }}</label>
+            <input class="ckw-cird__input" type="email" id="ckw-cird__register__email" name="email" />
+
+            <div class="ckw-cird__error" data-target="password"></div>
+            <label for="ckw-cird__register__password">{{trans "password" }}</label>
+            <input class="ckw-cird__input" type="password" id="ckw-cird__register__password" name="password" />
+
+            <div class="ckw-cird__error" data-target="passwordConfirmation"></div>
+            <label for="ckw-cird__register__passwordConfirmation">{{trans "confirmPassword" }}</label>
+            <input class="ckw-cird__input" type="password" id="ckw-cird__register__passwordConfirmation" name="confirm_password" />
+
+            <div class="ckw-cird__error" data-target="pro"></div>
+            <div class="ckw-cird__pro-field">
+                <input class="ckw-cird__input" type="checkbox" value="off" id="ckw-cird__register__pro" name="pro" />
+                <label for="ckw-cird__register__pro">{{trans "proRegister" }}</label>
+            </div>
+        </div>
+
+        <div class="ckw-cird__register-input-pro" style="display:none;">
+            <div class="ckw-cird__error" data-target="organizationName"></div>
+            <label for="ckw-cird__register__organizationName">{{trans "organizationName" }}</label>
+            <input class="ckw-cird__input" type="text" id="ckw-cird__register__organizationName" name="organizationName" />
+
+            <div class="ckw-cird__error" data-target="organizationType"></div>
+            <label for="ckw-cird__register__organizationType">{{trans "organizationType" }}</label>
+            <select class="ckw-cird__input" id="ckw-cird__register__organizationType" name="organizationType">
+                <option value="">{{trans "organizationTypeDefault" }}</option>
+            </select>
+
+            <div class="ckw-cird__error" data-target="website"></div>
+            <label for="ckw-cird__register__website">{{trans "website" }} ({{trans "optional"}})</label>
+            <input class="ckw-cird__input" type="text" id="ckw-cird__register__website" name="website" />
+        </div>
+    </div>
+
+    <div class="ckw-cird__error" data-target="tos"></div>
+    <div class="ckw-cird__tos-field">
+        <input class="ckw-cird__input" type="checkbox" id="ckw-cird__register__tos" name="tos" />
+        <label for="ckw-cird__register__tos">{{trans "cgu" }}</label>
+    </div>
+    <p class="ckw-cird__small-text">
+        {{#if custom_tos }}
+            {{{trans "customCguText" tos_link=tos_link }}}
+        {{else}}
+            {{{trans "cguText" tos_link=tos_link }}}
+        {{/if}}
+    </p>
+
+    <button class="ckw-cird__submit-button">{{trans "register" }}</button>
+
+    <div class="ckw-cird__links">
+        <a href="/login" target="angular">{{trans "hasAccount" }}</a>
+    </div>
+</div>

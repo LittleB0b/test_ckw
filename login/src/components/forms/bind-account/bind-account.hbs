@@ -1,0 +1,20 @@
+
+<h1 class="ckw-cird__title">{{trans "bindAccount" }}</h1>
+
+<div class="ckw-cird__form">
+    <p class="ckw-cird__text">{{{trans "bindText" email=email provider=provider accountBranding=accountBranding }}}</p>
+
+    <div class="ckw-cird__error" data-target="password"></div>
+    <label for="ckw-cird__bind-account__password">{{trans "password" }}</label>
+    <input class="ckw-cird__input" type="password" id="ckw-cird__bind-account__password" name="_password" />
+
+    <div class="ckw-cird__links" style="margin-bottom: 0;">
+        <a class="ckw-cird__bind-account__reset-password">{{trans "forgottenPassword" }}</a>
+    </div>
+
+    <button class="ckw-cird__submit-button">{{trans "submitBind" }}</button>
+
+    {{#if cancelUrl }}
+        <a class="ckw-cird__cancel-button" href="{{ cancelUrl }}">{{trans "cancel" }}</a>
+    {{/if}}
+</div>

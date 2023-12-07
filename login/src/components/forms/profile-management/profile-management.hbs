@@ -1,0 +1,319 @@
+{{#if showTitle }}
+  <h1 class="ckw-cird__title">{{trans "profileManagement"}}</h1>
+{{/if }}
+<div class="ckw-cird__form">
+
+  <!-- Button Enregistrer -->
+
+  <button class="ckw-cird__submit-button">{{trans "save"}}</button>
+
+  <!-- Photo de profil -->
+
+
+  <div class="ckw-cird__img ckw-cird__section">
+
+    <h2>{{trans "profile.profilPicture"}}</h2>
+
+    <div class="ckw-cird__change-img">
+      <div class="ckw-cird__img">
+        <div class="ckw-cird__error" data-target="file"></div>
+
+        <img src="" alt="" id="ckw-cird__profile-management__image" />
+
+        <span class="ckw-cird__profile-management__image-loading">
+            {{{svg "loading" }}}
+        </span>
+      </div>
+      <div class="ckw-cird__submit-img">
+        <input type="file" id="ckw-cird__profile-management__file" accept="image/*" name="file" />
+        <label for="ckw-cird__profile-management__file" id="ckw-cird__profile-management__label-img">{{trans
+          "change"}}</label>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Mes informations personnelles -->
+
+  <div class="ckw-cird__user-info">
+    <div class="ckw-cird__info ckw-cird__section">
+
+      <h2>{{trans "profile.personnalInfo"}}</h2>
+
+      <div class="ckw-cird__pseudo">
+        <div class="ckw-cird__error" data-target="pseudo"></div>
+        <label for="pseudo">{{trans "profile.pseudo"}} <span class="ckw-cird__asterisk">*</span></label>
+        <input type="text" id="ckw-cird__profile-management__pseudo" class="ckw-cird__input" name="pseudo" />
+      </div>
+
+      <div class="ckw-cird__name">
+        <div class="ckw-cird__error" data-target="name"></div>
+        <label for="Name">{{trans "profile.name"}}</label>
+        <input type="text" id="ckw-cird__profile-management__name" class="ckw-cird__input" name="name" />
+      </div>
+
+      <div class="ckw-cird__surname">
+        <div class="ckw-cird__error" data-target="surname"></div>
+        <label for="Surname">{{trans "profile.firstname"}}</label>
+        <input type="text" id="ckw-cird__profile-management__firstname" class="ckw-cird__input" name="surname" />
+      </div>
+
+      <div class="ckw-cird__email">
+        <label for="Email">{{trans "profile.mailManagement"}} <span class="ckw-cird__asterisk">*</span></label>
+        <div class="ckw-cird__error" data-target="email"></div>
+        <input type="email" id="ckw-cird__profile-management__email" class="ckw-cird__input" name="email" />
+      </div>
+
+      <!-- Checkbox Pro -->
+
+      <div class="ckw-cird__pro">
+        <label><input type="checkbox" id="ckw-cird__profile-management__professionnel" name="pro" />{{trans "proRegister"}}</label>
+      </div>
+
+    </div>
+
+
+
+    <!-- Mes informations professionnelles -->
+
+    <div class="ckw-cird__pro-section ckw-cird__section" id="ckw-cird__profile-management__proSection">
+
+      <h2>{{trans "profile.proInfo"}}</h2>
+      <div class="ckw-cird__organizationName">
+        <div class="ckw-cird__error" data-target="organizationName"></div>
+        <div class="ckw-cird__header_row">
+          <label for="organizationName">{{trans "organizationName"}} <span class="ckw-cird__asterisk">*</span></label>
+          <div class="ckw-cird__tooltip">
+            <button class="ckw-cird__tooltip_icon" id="ckw-cird__profile-management__tltp_pro" aria-describedby="tooltip">?</button>
+            <div class="ckw-cird__tooltip_text" id="ckw-cird__profile-management__tltp_pro-txt" role="tooltip">
+              {{trans "tooltip.structureName"}}
+              <div class="ckw-cird__tooltip_arrow" data-popper-arrow></div>
+            </div>
+          </div>
+        </div>
+
+        <input type="text" id="ckw-cird__profile-management__organizationName" class="ckw-cird__input"
+          name="organizationName" />
+      </div>
+
+      <div class="ckw_cird__organizationType">
+        <div class="ckw-cird__error" data-target="organizationType"></div>
+        <label for="organizationType">{{trans "organizationType"}} <span class="ckw-cird__asterisk">*</span></label>
+        <select class="ckw-cird__input" name="organizationType" id="ckw-cird__profile-management__organizationType">
+          <option value="">{{trans "organizationTypeDefault"}}</option>
+        </select>
+      </div>
+
+      <div class="ckw_cird__website">
+        <div class="ckw-cird__error" data-target="website"></div>
+        <label for="website">{{trans "profile.website"}}</label>
+        <input type="text" id="ckw-cird__profile-management__website" class="ckw-cird__input" name="website" />
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- Bouton ID -->
+
+  <div class="ckw-cird__button_id">
+    <button id="ckw-cird__profile-management__id" class="ckw-cird__button_secondary">{{trans "profile.showId"}}</button>
+  </div>
+
+  <!-- Changement de mot de passe -->
+
+  <div class="ckw-cird__change-password ckw-cird__hide-password">
+    <span class="ckw-cird__close" id="ckw-cird__profile-management__btn_close">&times;</span>
+    <div class="ckw-cird__password-content">
+      <div class="ckw-cird__old-password">
+        <label for="ckw-cird__profile-management__old_password">{{trans
+          "oldPassword"
+          }} <span class="ckw-cird__asterisk">*</span></label>
+        <div class="ckw-cird__error" data-target="old_password"></div>
+        <input type="password" class="ckw-cird__input" id="ckw-cird__profile-management__old_password" />
+      </div>
+      <div class="ckw-cird__new-password">
+        <label for="ckw-cird__profile-management__new_password">{{trans
+          "newPassword"
+          }} <span class="ckw-cird__asterisk">*</span></label>
+        <div class="ckw-cird__error" data-target="new_password"></div>
+        <input type="password" class="ckw-cird__input" id="ckw-cird__profile-management__new_password" />
+      </div>
+      <div class="ckw-cird__second-password">
+        <label for="ckw-cird__profile-management__input-verifyPassword">{{trans
+          "confirmPassword"
+          }} <span class="ckw-cird__asterisk">*</span></label>
+        <div class="ckw-cird__error" data-target="verify_password"></div>
+        <input type="password" class="ckw-cird__input" id="ckw-cird__profile-management__verify_password" />
+      </div>
+      <div class="ckw-cird__btn-submitPassword">
+        <button class="ckw-cird__button" id="ckw-cird__profile-management__submit-password">{{trans
+          "confirmPassword"}}</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ckw-cird__btn_change_pwd">
+    <div class="ckw-cird__alert-success ckw-cird__hide">{{trans "alertSuccess"}}</div>
+    <button id="ckw-cird__profile-management__btn_change_pwd" class="ckw-cird__button_secondary">{{trans
+      "profile.changePassword"}}</button>
+  </div>
+
+
+
+  <!-- Adresse -->
+
+  <div class="ckw-cird__user-address">
+    <div class="ckw-cird__address ckw-cird__section">
+
+      <h2>{{trans "profile.myAddress"}}</h2>
+
+      <!-- Checkbox facturation -->
+
+      <div class="ckw-cird__billing">
+        <label>
+          <input type="checkbox" id="ckw-cird__profile-management__billing" name="billing" />{{trans
+        "profile.answerBilling"}}
+        </label>
+      </div>
+
+      <!-- Adresse principale -->
+
+      <div class="ckw-cird__label">
+        <label for="">{{trans "profile.street"}} <span class="ckw-cird__asterisk">*</span></label>
+      </div>
+
+      <div class="ckw-cird__row">
+        <div class="ckw-cird__error" data-target="numAddr"></div>
+        <div class="ckw-cird__error" data-target="nameAddr"></div>
+
+        <div class="ckw-cird__numAddr">
+          <input type="text" id="ckw-cird__profile-management__numAddr" class="ckw-cird__input" name="address_num" />
+        </div>
+
+        <div class="ckw-cird__nameAddr">
+          <input type="text" id="ckw-cird__profile-management__nameAddr" class="ckw-cird__input" name="address_street" />
+        </div>
+      </div>
+
+      <div class="ckw-cird__postal">
+        <label for="Postal">{{trans "profile.cp"}} <span class="ckw-cird__asterisk">*</span></label>
+        <div class="ckw-cird__error" data-target="postal"></div>
+        <input type="text" id="ckw-cird__profile-management__postal" class="ckw-cird__input" name="zip_code" />
+      </div>
+
+      <div class="ckw-cird__city">
+        <label for="City">{{trans "profile.city"}} <span class="ckw-cird__asterisk">*</span></label>
+        <div class="ckw-cird__error" data-target="city"></div>
+        <input type="text" id="ckw-cird__profile-management__city" class="ckw-cird__input" name="city" />
+      </div>
+
+      <div class="ckw-cird_country">
+        <label for="Country">{{trans "profile.country"}} <span class="ckw-cird__asterisk">*</span></label>
+        <div class="ckw-cird__error" data-target="country"></div>
+        <select class="ckw-cird__input" name="country" id="ckw-cird__profile-management__countryList">
+          <option value="" defaultSelected>{{trans "countryListDefault"}}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Adresse de facturation -->
+
+    <div class="ckw-cird__section ckw-cird__billing-section" id="ckw-cird__profile-management__billingSection">
+      <h2>{{trans "profile.billingAddress"}}</h2>
+
+      <div class="ckw-cird__billing-content">
+        <div class="ckw-cird__label">
+          <label for="">{{trans "profile.street"}} <span class="ckw-cird__asterisk">*</span></label>
+        </div>
+
+        <div class="ckw-cird__row">
+          <div class="ckw-cird__error" data-target="numAddrFac"></div>
+          <div class="ckw-cird__error" data-target="nameAddrFac"></div>
+
+
+          <div class="ckw-cird__numAddrFac">
+            <input type="text" id="ckw-cird__profile-management__numAddrFac" class="ckw-cird__input"
+              name="address_billing_num" />
+          </div>
+
+
+          <div class="ckw-cird__nameAddrFac">
+            <input type="text" id="ckw-cird__profile-management__nameAddrFac" class="ckw-cird__input"
+              name="address_billing_street" />
+          </div>
+
+        </div>
+
+        <div class="ckw-cird__facPostal">
+          <label for="Postal">{{trans "profile.cp"}} <span class="ckw-cird__asterisk">*</span></label>
+          <div class="ckw-cird__error" data-target="facPostal"></div>
+          <input type="text" id="ckw-cird__profile-management__facPostal" class="ckw-cird__input"
+            name="zip_code_billing" />
+        </div>
+
+        <div class="ckw-cird__facCity">
+          <label for="City">{{trans "profile.city"}} <span class="ckw-cird__asterisk">*</span></label>
+          <div class="ckw-cird__error" data-target="facCity"></div>
+          <input type="text" id="ckw-cird__profile-management__facCity" class="ckw-cird__input"
+            name="billing_city" />
+        </div>
+
+        <div class="ckw-cird_country">
+          <label for="Country">{{trans "profile.country"}} <span class="ckw-cird__asterisk">*</span></label>
+          <div class="ckw-cird__error" data-target="countryListFac"></div>
+          <select class="ckw-cird__input" name="billing_country" id="ckw-cird__profile-management__countryListFac">
+            <option value="">{{trans "countryListDefault"}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Mes coordonnées publique -->
+
+  <div class="ckw-cird__public_info ckw-cird__section">
+
+    <h2>{{trans "profile.publicData"}}</h2>
+
+    <div class="ckw-cird__public_phone">
+      <label for="PhonePublic">{{trans "profile.publicPhone"}}</label>
+      <input type="text" id="ckw-cird__profile-management__publicPhone" class="ckw-cird__input" name="phone" />
+    </div>
+
+    <div class="ckw-cird__public_email">
+      <div class="ckw-cird__header_row">
+        <label for="PublicEmail">{{trans "profile.publicMail"}}</label>
+        <div class="ckw-cird__tooltip">
+            <button class="ckw-cird__tooltip_icon" id="ckw-cird__profile-management__tltp_public" aria-describedby="tooltip">?</button>
+            <div class="ckw-cird__tooltip_text" id="ckw-cird__profile-management__tltp_public-txt" role="tooltip">
+              {{trans "tooltip.email"}}
+              <div class="ckw-cird__tooltip_arrow" data-popper-arrow></div>
+            </div>
+          </div>
+      </div>
+
+      <input type="text" id="ckw-cird__profile-management__publicMail" class="ckw-cird__input" name="public_mail" />
+    </div>
+  </div>
+
+  <!-- Votre offre -->
+  <div class="ckw-cird__userPack ckw-cird__section" id="ckw-cird__profile-management__userPack">
+    <h2>{{trans "profile.myOffer"}}</h2>
+  </div>
+
+  <div class="ckw-cird__button_secondary" id="ckw-cird__profile-management__btnOffer">
+    <a href="?mb_dashboard=tarifs">{{trans "offerDetails"}}</a>
+  </div>
+
+
+  <!-- Button enregistrer -->
+
+  <button class="ckw-cird__submit-button" id="submit">{{trans "save"}}</button>
+
+  <!-- Suppression compte -->
+  <div class="ckw-cird__mail ckw-cird__section">
+    <a class="ckw-cird__send-account-removal-request"></a>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+
+# Managed by Node.js
+node_modules/
+package-lock.json
+.env
+.env.*
+# On ignore pas ce fichier
+!.env.example
+
+# Yarn
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*

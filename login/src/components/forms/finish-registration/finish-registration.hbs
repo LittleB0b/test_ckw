@@ -1,0 +1,19 @@
+
+<h1 class="ckw-cird__title">{{trans "finishRegistration" }}</h1>
+
+<div class="ckw-cird__form">
+    <div class="ckw-cird__error" data-target="tos"></div>
+    <div class="ckw-cird__tos-field">
+        <input class="ckw-cird__input" type="checkbox" id="ckw-cird__finish-registration__tos" name="tos" />
+        <label for="ckw-cird__finish-registration__tos">{{trans "cgu" }}</label>
+    </div>
+    <p class="ckw-cird__small-text">
+        {{#if custom_tos }}
+            {{{trans "customCguText" tos_link=tos_link }}}
+        {{else}}
+            {{{trans "cguText" tos_link=tos_link }}}
+        {{/if}}
+    </p>
+
+    <button class="ckw-cird__submit-button">{{trans "finish" }}</button>
+</div>

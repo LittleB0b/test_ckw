@@ -1,0 +1,80 @@
+{{#if showTitle }}
+    <h1 class="ckw-cird__title">{{trans "connect" }}</h1>
+{{/if }}
+
+{{#if reason }}
+    <p class="ckw-cird__login-reason">{{ reason }}</p>
+{{/if}}
+
+<div class="ckw-cird__form {{# if cirkwiLast}}ckw-cird__form--cirkwi-last{{/if}}">
+
+    <div class="ckw-cird__login-form" {{# if cirkwiLast}}style="display: none;"{{/if}}>
+        <div class="ckw-cird__error" data-target="email"></div>
+        <label for="ckw-cird__login__email">{{trans "email" }}</label>
+        <input class="ckw-cird__input" type="email" id="ckw-cird__login__email" name="_username" />
+
+        <div class="ckw-cird__error" data-target="password"></div>
+        <label for="ckw-cird__login__password">{{trans "password" }}</label>
+        <input class="ckw-cird__input" type="password" id="ckw-cird__login__password" name="_password" />
+
+        <button class="ckw-cird__submit-button">{{trans "connect" }}</button>
+
+        {{# if cirkwiLast}}
+            <button class="ckw-cird__back-button"><span class="ckw-cird__unicode-arrow">← </span>{{trans "back" }}</button>
+        {{/if}}
+
+        {{# unless disableResetPassword }}
+            <div class="ckw-cird__links ckw-cird__links--reset-password">
+                <a href="/reset-password" target="angular">{{trans "forgottenPassword" }}</a>
+            </div>
+        {{/unless}}
+    </div>
+
+    <div class="ckw-cird__login-providers">
+        {{#if ffrSignIn }}
+            <button class="ckw-cird__login-with" id="ckw-cird__login__sgvf">
+                {{{svg "ffr" }}}<span>{{trans "continueWithFfr" }}</span>
+            </button>
+        {{/if}}
+
+        <button class="ckw-cird__login-with" id="ckw-cird__login__facebook">
+            {{{svg "facebook" }}}<span>{{trans "continueWithFacebook" }}</span>
+        </button>
+
+        {{#unless appleSignIn }}
+            <button class="ckw-cird__login-with" id="ckw-cird__login__google">
+                {{{svg "google" }}}<span>{{trans "continueWithGoogle" }}</span>
+            </button>
+        {{/unless}}
+
+        {{#if appleSignIn }}
+            <button class="ckw-cird__login-with" id="ckw-cird__login__apple">
+                {{{svg "apple" }}}<span>{{trans "continueWithApple" }}</span>
+            </button>
+        {{/if}}
+
+        {{#if loginWithMicrosoft }}
+            <button class="ckw-cird__login-with" id="ckw-cird__login__microsoft">
+                {{{svg "microsoft-color" }}}<span>{{trans "continueWithMicrosoft" }}</span>
+            </button>
+        {{/if}}
+
+        {{#if cirkwiLast }}
+            {{#if ffrSignIn }}
+                <button class="ckw-cird__login-with" id="ckw-cird__login__cirkwi" style="background-color: #063900">
+                    <span>{{trans "continueWithMaRando" }}</span>
+                </button>
+            {{else}}
+                <button class="ckw-cird__login-with" id="ckw-cird__login__cirkwi">
+                    {{{svg "cirkwi" }}}<span>{{trans "continueWithCirkwi" }}</span>
+                </button>
+            {{/if}}
+        {{/if}}
+    </div>
+
+    <div class="ckw-cird__links">
+        <a href="{{#if registerAnchorHref }}{{ registerAnchorHref }}{{else}}/register{{/if}}"
+           target="{{#if registerAnchorTarget }}{{ registerAnchorTarget }}{{else}}angular{{/if}}"
+        >{{{trans "noAccount" }}}</a>
+    </div>
+</div>

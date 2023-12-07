@@ -1,0 +1,39 @@
+
+<div class="ckw-cird__form">
+
+    <p class="ckw-cird__prelogin-message">Pour continuer, veuillez vous authentifier:</p>
+
+    <a class="ckw-cird__button" href="/login" target="angular">{{trans "connect" }}</a>
+
+    {{#if ffrSignIn }}
+        <button class="ckw-cird__login-with" id="ckw-cird__login__sgvf">
+            {{{svg "ffr" }}}<span>{{trans "continueWithFfr" }}</span>
+        </button>
+    {{/if}}
+
+    <button class="ckw-cird__login-with" id="ckw-cird__login__facebook">
+        {{{svg "facebook" }}}<span>{{trans "continueWithFacebook" }}</span>
+    </button>
+
+    {{#unless appleSignIn }}
+        <button class="ckw-cird__login-with" id="ckw-cird__login__google">
+            {{{svg "google" }}}<span>{{trans "continueWithGoogle" }}</span>
+        </button>
+    {{/unless}}
+
+    {{#if appleSignIn }}
+        <button class="ckw-cird__login-with" id="ckw-cird__login__apple">
+            {{{svg "apple" }}}<span>{{trans "continueWithApple" }}</span>
+        </button>
+    {{/if}}
+
+    {{#if loginWithMicrosoft }}
+        <button class="ckw-cird__login-with" id="ckw-cird__login__microsoft">
+            {{{svg "microsoft-color" }}}<span>{{trans "continueWithMicrosoft" }}</span>
+        </button>
+    {{/if}}
+
+    <div class="ckw-cird__links">
+        <a href="/register" target="angular">{{{trans "noAccount" }}}</a>
+    </div>
+</div>

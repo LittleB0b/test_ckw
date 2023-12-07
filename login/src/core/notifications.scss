@@ -1,0 +1,33 @@
+
+.cird_notification {
+    position: relative;
+    box-sizing: border-box;
+    background-color: #46cbf4;
+    font-family: sans-serif;
+    margin-bottom: 25px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 1;
+    padding: 12px 21px;
+    width: 100%;
+
+    &__text {
+        margin: 0;
+        text-align: center;
+        line-height: 1;
+    }
+
+    &__close-button {
+        background-color: #fff0;
+        position: absolute;
+        right: -9px;
+        border: none;
+        color: white;
+        cursor: pointer;
+        margin: 1em;
+        font-size: 0.9em;
+        font-weight: bold;
+    }
+}

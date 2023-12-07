@@ -1,0 +1,21 @@
+@import "../../form/form";
+
+.ckw-cird__line {
+    white-space: nowrap;
+}
+
+.ckw-cird__form a.ckw-cird__edit-profil-sgvf {
+    @extend .ckw-cird__submit-button;
+
+    background-color: #03a66a;
+    line-height: 1.5;
+
+    svg {
+        width: 20px; height: 20px;
+        vertical-align: sub;
+
+        [fill] {
+            fill: white;
+        }
+    }
+}
