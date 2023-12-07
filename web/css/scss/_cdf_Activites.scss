@@ -1,0 +1,74 @@
+@import "compass/css3/border-radius";
+
+.cdf_BlocActivites {
+    @include border-bottom-radius(none);
+
+    .cdf_MapAlertIcon {
+        margin-left: 2px;
+        margin-top: 2px;
+    }
+}
+
+.cdf_Activite {
+    overflow: hidden;
+    cursor: pointer;
+
+    + .cdf_Activite {
+        border-top: 1px solid #ccc;
+    }
+}
+
+.cdf_ActiviteAdresse {
+    border-bottom: 1px solid #ccc;
+    display: block;
+    font-family: OpenSansExtraBold;
+    padding-bottom: 6px;
+    padding-left: 12px;
+    padding-top: 6px;
+}
+
+.cdf_ActiviteBloc {
+    margin: 10px 14px 8px 11px;
+    overflow: hidden;
+
+    > .cdf_ImageAuteur {
+        float: left;
+        margin-right: 9px;
+    }
+}
+
+.cdf_ActiviteAuteur {
+    display: block;
+    font-family: OpenSansBold;
+    margin-top: 2px;
+}
+
+.cdf_ActiviteDescription {
+    line-height: 1.13;
+    margin-left: 49px;
+    margin-top: 4px;
+}
+
+.cdf_ActiviteInfo {
+    margin-left: 47px;
+    margin-top: 8px;
+
+    > .cdf_Sprite {
+        margin-right: 1px;
+        margin-top: -5px;
+    }
+}
+
+.cdf_ActiviteCreation {
+    font-family: OpenSansSemibold;
+    margin-left: 3px;
+
+    > .cdf_Sprite {
+        margin-right: 6px;
+        margin-top: -5px;
+    }
+}
+
+.cdf_NoActivities {
+    margin: 10px;
+}
