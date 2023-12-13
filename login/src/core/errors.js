@@ -18,6 +18,7 @@ export class ErrorFormatter {
      */
     constructor(translator) {
         this._translator = translator;
+        this._translator = translator;
     }
 
     /**
@@ -33,7 +34,7 @@ export class ErrorFormatter {
 
                 if (parsedError.errorCode) {
                     error = parsedError.errorCode;
-                // Si on a un message d'erreur on le retourne directement.
+                    // Si on a un message d'erreur on le retourne directement.
                 } else if (parsedError.message) {
                     return parsedError.message;
                 }
