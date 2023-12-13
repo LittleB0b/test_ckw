@@ -63,10 +63,10 @@ $constantes = new Constantes(
         'DELAI_NOTIFICATIONS' => 60000, // en millisecondes
         'TIMEOUT_NOTIFICATIONS' => 5000, // temps maximum pour la requête en millisecondes
         'DEFAULT_ERREUR_DEV' => 'Ton application chie dans la colle',
-        'VERSION_CSS' =>  constant("ENV") == "prod" ? 589 : time(),
-        'VERSION_JS' =>  constant("ENV") == "prod" ? 580 : time(), // Permet de recharger le fichier javascript sans vider le cache
-        'VERSION_JS_BACK' => constant("ENV") == "prod" ? 561 : time(), //Permet de forcer les js en cache du client
-        'VERSION_JS_FRONT' => constant("ENV") == "prod" ? 561 : time(), //Permet de forcer les js en cache du client
+        'VERSION_CSS' =>  constant("ENV") == "prod" ? 590 : time(),
+        'VERSION_JS' =>  constant("ENV") == "prod" ? 581 : time(), // Permet de recharger le fichier javascript sans vider le cache
+        'VERSION_JS_BACK' => constant("ENV") == "prod" ? 562 : time(), //Permet de forcer les js en cache du client
+        'VERSION_JS_FRONT' => constant("ENV") == "prod" ? 562 : time(), //Permet de forcer les js en cache du client
         'MAIL_NOREPLY' => 'no-reply@cirkwi.com',
         'MAIL_NOREPLY_FFR' => 'noreply@ffrandonnee.fr',
 		'MAIL_DELETE_ACCOUNT' => 'support@cirkwi.com',
