@@ -1,15 +1,15 @@
-import {HttpClient, UrlUtils} from './http';
-import {FormDataEncoder, isFile} from "form-data-encoder";
-import {concat} from 'uint8arrays/concat';
-import {toString} from 'uint8arrays/to-string';
+import { HttpClient, UrlUtils } from './http';
+import { FormDataEncoder, isFile } from "form-data-encoder";
+import { concat } from 'uint8arrays/concat';
+import { toString } from 'uint8arrays/to-string';
 
 async function encodeFormDataToString(data) {
     return toString(concat((await asyncIteratorToArray(data))), 'base64');
 }
 
-async function asyncIteratorToArray(asyncIterator){
-    const arr=[];
-    for await(const i of asyncIterator) arr.push(i);
+async function asyncIteratorToArray(asyncIterator) {
+    const arr = [];
+    for await (const i of asyncIterator) arr.push(i);
     return arr;
 }
 
@@ -108,23 +108,23 @@ export class CirkwiApi {
             let body
             let multipartBoundary = ""
 
-            if(data instanceof FormData){
+            if (data instanceof FormData) {
                 const encoder = new CustomEncoder(data)
                 body = await encodeFormDataToString(encoder.encode())
                 multipartBoundary = encoder.boundary
-            }else {
+            } else {
                 body = UrlUtils.toParamsString(data)
             }
 
             url = this._kwapOrigin + '/cird/callCirkwiFunction' + (this._kwapQueryString || '');
-                data = {
-                    multipartBoundary,
-                    method: options.method,
-                    route: `/${this._language}${route}${UrlUtils.toQueryString(options.query)}`,
-                    options: body
-                };
+            data = {
+                multipartBoundary,
+                method: options.method,
+                route: `/${this._language}${route}${UrlUtils.toQueryString(options.query)}`,
+                options: body
+            };
             options.method = 'POST';
-            options.query = {cookieMode: 2};
+            options.query = { cookieMode: 2 };
         }
         else {
             this._checkUndefined(['_cirkwiOrigin']);
@@ -139,29 +139,29 @@ export class CirkwiApi {
         }
 
         return this._http.sendRequest(url, options)
-        .then(response => {
-            return response.text().then(text => {
+            .then(response => {
+                return response.text().then(text => {
 
-                let apiResult;
+                    let apiResult;
 
-                try {
-                    apiResult = JSON.parse(text);
-                }
-                catch (e) {
-                    apiResult = {
-                        status: 'unknown',
-                        data: text
-                    };
-                }
+                    try {
+                        apiResult = JSON.parse(text);
+                    }
+                    catch (e) {
+                        apiResult = {
+                            status: 'unknown',
+                            data: text
+                        };
+                    }
 
-                return apiResult;
+                    return apiResult;
+                });
+            }, error => {
+                return {
+                    status: 'error',
+                    message: error.message
+                };
             });
-        }, error => {
-            return {
-                status: 'error',
-                message: error.message
-            };
-        });
     }
 
 
@@ -182,20 +182,20 @@ export class CirkwiApi {
     }
 }
 
-export class CustomEncoder extends FormDataEncoder
-{
+export class CustomEncoder extends FormDataEncoder {
     async* encode() {
         for (const part of this.values()) {
-          if (isFile(part)) {
-            yield await this.readableStreamToAsyncIterator(part)
-          } else {
-            yield part
-          }
+            if (isFile(part)) {
+                yield await this.readableStreamToAsyncIterator(part)
+            } else {
+                yield part
+            }
         }
-      }
+    }
 
-    async readableStreamToAsyncIterator(file){
-        return new Promise((resolve, reject) => {let fileReader = new FileReader()
+    async readableStreamToAsyncIterator(file) {
+        return new Promise((resolve, reject) => {
+            let fileReader = new FileReader()
             fileReader.readAsArrayBuffer(file)
             fileReader.onload = () => {
                 resolve(new Uint8Array(fileReader.result))
