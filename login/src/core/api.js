@@ -32,6 +32,7 @@ export class CirkwiApi {
         this._kwapOrigin = null;
         this._kwapQueryString = null;
         this._cirkwiOrigin = '';
+        this._cirkwiOrigin = '';
 
         this._http = new HttpClient({ cookieManager });
     }
